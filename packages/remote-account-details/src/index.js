@@ -1,6 +1,6 @@
 import React from 'react';
 
-// A wrapper shell for all Apps (may become many providers like a LocaleProvider)
+// An example of an Account Details component, rendering fake information for an account
 export default function AccountDetails() {
   return (
     <div>

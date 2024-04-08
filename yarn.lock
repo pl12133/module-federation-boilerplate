@@ -5431,9 +5431,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"module-fed-scratch@workspace:.":
+"module-federation-boilerplate@workspace:.":
   version: 0.0.0-use.local
-  resolution: "module-fed-scratch@workspace:."
+  resolution: "module-federation-boilerplate@workspace:."
   dependencies:
     lerna: "npm:^8.1.2"
   languageName: unknown
