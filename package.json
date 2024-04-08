@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "start:all": "lerna run start"
+  },
   "dependencies": {
     "lerna": "^8.1.2"
   }

@@ -1,15 +1,27 @@
 import React from 'react';
+import { useAccount } from './hooks/useAccount';
 
-// An example of an Account Details component, rendering fake information for an account
 export default function AccountDetails() {
+  const { loading, error, data } = useAccount()
+  const account = data?.account
   return (
     <div>
-      <div>
-        User Number #1
-      </div>
-      <div>
-        email@example.com
-      </div>
+      {loading ? (
+        'Loading...'
+      ) : error ? (
+        `ERROR: ${error.message}`
+      ) : data ? (
+        <div>
+          <div>
+            Name: {account.name}
+          </div>
+          <div>
+            Email: {account.email}
+          </div>
+        </div>
+      ) : (
+        'No account data found!'
+      )}
     </div>
   )
 }
