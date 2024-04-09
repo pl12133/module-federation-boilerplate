@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --mode production",
-    "serve": "serve -p 3032 --cors dist/"
+    "serve": "serve -p 3031 --cors dist/"
   },
   "keywords": [],
   "author": "",
