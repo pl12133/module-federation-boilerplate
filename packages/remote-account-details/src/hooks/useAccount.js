@@ -12,7 +12,7 @@ export function useAccount() {
     setLoading(false)
     const randomErrorChance = Math.floor(Math.random() * 100)
     if (randomErrorChance > 80) {
-      setError(Error('An error occurred!'))
+      setError(Error('A mock error occurred! (this is a random event with a 20% chance of happening)'))
     }
   }, randomLoadingDelay)
 

@@ -5,7 +5,9 @@
     "packages/*"
   ],
   "scripts": {
-    "start:all": "lerna run start"
+    "start:all": "lerna run start",
+    "build:all": "lerna run build",
+    "serve:all": "lerna run serve"
   },
   "dependencies": {
     "lerna": "^8.1.2"

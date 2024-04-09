@@ -9,36 +9,22 @@ yarn
 #### Development
 
 ```sh
-# Host applications will start on http://localhost:3001 and http://localhost:3002 
-npx lerna run start
+# Host applications will start on http://localhost:3001 and http://localhost:3002,
+# remotes on http://localhost:3031 and http://localhost:3032
+npm run start:all
 ```
 
 #### Production
 
+**NOTE**: This is currently not working due to a chunking problem I am working on in the prod build.
 ```sh
-npx lerna run build
+npm run build:all
 ```
 
-Locally, this can be tested by hosting a static HTTP server from each package on the expected port, e.g.:
+Locally, the prod build can be tested by building all bundles and hosting a static HTTP server from each package on the expected port. This is done with the following command:
 
 ```sh
-# Install a simple static HTTP Server CLI tool:
-npm install --global serve
-
-# TODO: Make this into an easier to use "lerna run serve:dist" command.
-
-# Run four HTTP servers in four different shells:
-cd packages/host-user/dist
-serve -p 3001 --single
-
-cd packages/host-admin/dist
-serve -p 3002 --single
-
-cd packages/remote-component-kit/dist
-serve -p 3031 --cors
-
-cd packages/remote-account-details/dist
-serve -p 3032 --cors
+npm run build:all && npm run serve:all
 ```
 
 In a CDN environment, depending on the host/location of the CDN you are deploying to, you will have to edit the Webpack configurations for the host applications. This can be accomplished by editing the `$HOST_DIRECTORY/webpack.config.js` file to point to your CDN:
